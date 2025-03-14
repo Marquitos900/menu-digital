@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabritos Moreno - Menú</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/images/logo cabritos moreno.png" alt="Logo Cabritos Moreno">
+            </div>
+            <h1>Cabritos Moreno</h1>
+            <nav>
+                <ul>
+                    <li><a href="#cortes-finos">Cortes Finos</a></li>
+                    <li><a href="#cabritos">Cabritos y Derivados</a></li>
+                    <li><a href="#extras">Extras</a></li>
+                    <li><a href="#contacto">Contáctanos</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <section id="cortes-finos" class="menu-section">
+                <h2 class="accordion-toggle">Cortes Finos</h2>
+                <div class="accordion-content">
+                    <p>Personaliza tu caja con los cortes que quieras (5 kg) o elige uno de nuestros kits prearmados.</p>
+                    <div class="menu-item">
+                        <h3>Kit-Mix 1</h3>
+                        <p>1 kg T-Bone • 1 kg Prime Rib • 1 kg Sirloin con Hueso • 1 kg Costilla Cargada • 1 kg Flecha</p>
+                        <span>$1,350</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Kit-Mix 2</h3>
+                        <p>1 kg T-Bone • 1 kg Prime Rib • 2 kg Costilla sin Hueso • 1 kg Sirloin</p>
+                        <span>$1,550</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Kit-Mix 3</h3>
+                        <p>1 kg New York • 2 kg Ribeye • 2 kg Costilla Norteña</p>
+                        <span>$1,850</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cabritos" class="menu-section">
+                <h2 class="accordion-toggle">Cabritos y Derivados</h2>
+                <div class="accordion-content">
+                    <div class="menu-item">
+                        <h3>Cabrito Supremo</h3>
+                        <p>Aprox. 5-7 kg por cabrito en canal. Incluye derivados: cabezita, asadera y machitos.</p>
+                        <span>1,600</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Lechones y Borreguitos</h3>
+                        <p>Carne fresca y de calidad suprema.</p>
+                        <span>Consulta precio</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="extras" class="menu-section">
+                <h2 class="accordion-toggle">Extras</h2>
+                <div class="accordion-content">
+                    <div class="menu-item">
+                        <h3>Carne Seca Leal</h3>
+                        <p>Tradicional y deliciosa, lista para disfrutar.</p>
+                        <span>Consulta precio</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Sazonadores Especiales</h3>
+                        <p>Perfectos para resaltar el sabor de tus cortes.</p>
+                        <span>Consulta precio</span>
+                    </div>
+                    <div class="menu-item">
+                        <h3>Ataúdes para Cabritos o Borregos</h3>
+                        <p>Ideales para asados completos.</p>
+                        <span>Consulta precio</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="contact">
+                <h2>Contáctanos</h2>
+                <p><strong>Teléfono:</strong> 899 923 3756</p>
+                <p><strong>WhatsApp:</strong> +52 1 899 423 9987</p>
+                <p><strong>Dirección:</strong> 805 Calle Río Sabinas, Reynosa, México, 88630</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>© 2025 Cabritos Moreno. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.accordion-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

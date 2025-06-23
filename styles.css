@@ -58,7 +58,7 @@ body {
 
 .carousel-inner {
     display: flex;
-    width: 300%; /* 100% por cada imagen (3 imágenes) */
+    width: 500%; /* Cambia de 300% a 500% para 5 imágenes */
     height: 100%;
     transition: transform 0.5s ease;
 }

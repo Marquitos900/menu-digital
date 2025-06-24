@@ -47,34 +47,40 @@ body {
     100% { opacity: 0; display: none; }
 }
 
+/* --- Carrusel de Imágenes --- */
 .carousel {
     position: relative;
-    width: 100%;
-    height: 320px;
+    width: 650px; /* Ancho fijo para el carrusel, puedes ajustarlo */
+    height: 320px; /* Altura del carrusel */
     overflow: hidden;
-    margin: 0 auto;
+    margin: 20px auto; /* Centra el carrusel y añade margen */
     z-index: 800;
     background: #fff;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para el recuadro */
 }
 
 .carousel-inner {
     display: flex;
-    width: 500%;
+    width: 100%; /* El inner ahora abarca el 100% del carrusel */
     height: 100%;
     transition: transform 0.5s ease;
 }
 
 .carousel-item {
-    width: 20%;
+    min-width: 100%; /* Cada ítem ocupa el 100% del ancho del carrusel */
     height: 100%;
-    flex-shrink: 0;
-    padding: 2px; /* Padding reducido para que encajen las imágenes */
+    flex-shrink: 0; /* Evita que los ítems se encojan */
+    display: flex; /* Para centrar la imagen dentro del item */
+    justify-content: center; /* Centrado horizontal de la imagen */
+    align-items: center; /* Centrado vertical de la imagen */
+    padding: 0; /* Quitamos el padding del item */
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+    width: 300px; /* Ancho fijo de la imagen (manteniendo tu especificación) */
+    height: 300px; /* Altura fija de la imagen (manteniendo tu especificación) */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -91,6 +97,7 @@ body {
     font-size: 1rem;
     z-index: 810;
     transition: background 0.3s ease;
+    border-radius: 5px; /* Bordes redondeados para los botones */
 }
 
 .carousel-btn:hover {
@@ -99,6 +106,9 @@ body {
 
 .prev { left: 10px; }
 .next { right: 10px; }
+
+/* --- Fin Carrusel de Imágenes --- */
+
 
 .main-header {
     background: linear-gradient(180deg, #E20B2C, #808080);
@@ -221,7 +231,7 @@ main::before {
 }
 
 .menu-section h2:hover {
-    color: #fff;
+    color: #fff; /* Este color blanco solo funcionará si el fondo cambia al pasar el mouse, de lo contrario no será visible */
 }
 
 .accordion-content {
@@ -282,7 +292,7 @@ main::before {
 }
 
 .menu-item span a:hover {
-    color: #fff;
+    color: #808080; /* Cambiado a gris para mejor contraste si el h2 no cambia de fondo */
     text-decoration: underline;
 }
 
@@ -319,7 +329,7 @@ main::before {
 
 .contact p a:hover {
     text-decoration: underline;
-    color: #fff;
+    color: #808080; /* Cambiado a gris para mejor contraste */
 }
 
 footer {
@@ -347,10 +357,12 @@ footer {
     }
 
     .carousel {
+        width: 500px; /* Ajuste para pantallas medianas */
         height: 280px;
     }
 
     .carousel-item img {
+        width: 260px; /* Ajuste el tamaño de la imagen */
         height: 260px;
     }
 }
@@ -373,10 +385,12 @@ footer {
     }
 
     .carousel {
+        width: 100%; /* El carrusel se vuelve 100% de ancho en pantallas pequeñas */
         height: 240px;
     }
 
     .carousel-item img {
+        width: 220px;
         height: 220px;
     }
 }
@@ -407,6 +421,19 @@ footer {
         height: auto;
         position: relative;
         padding: 1.5rem;
+        box-shadow: none; /* Elimina la sombra para que se integre mejor */
+        border-right: none; /* Elimina el borde */
+        border-bottom: 1px solid #E20B2C; /* Añade un borde inferior */
+    }
+
+    .sidebar nav ul {
+        display: flex; /* Convierte la navegación en una fila */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        justify-content: center; /* Centra los elementos */
+    }
+
+    .sidebar nav ul li {
+        margin: 0.5rem 0.75rem; /* Ajusta los márgenes para la navegación horizontal */
     }
 
     .sidebar nav ul li a {
@@ -436,6 +463,7 @@ footer {
     }
 
     .carousel-item img {
+        width: 160px;
         height: 160px;
     }
 

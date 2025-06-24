@@ -159,11 +159,13 @@
         }
 
         function updateCarousel() {
-            const offset = -currentSlide * 20; /* 20% por cada imagen (100% / 5) */
+            // ¡Esta es la línea clave que se corrigió!
+            // Ahora el offset es del 100% por cada slide, ya que cada carousel-item ocupa el 100% del ancho.
+            const offset = -currentSlide * 100;
             document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
         }
 
-        // Auto-slide every 3 seconds
+        // Auto-slide cada 3 segundos
         setInterval(() => moveCarousel(1), 3000);
     </script>
 </body>

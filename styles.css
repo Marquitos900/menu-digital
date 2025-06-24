@@ -47,11 +47,10 @@ body {
     100% { opacity: 0; display: none; }
 }
 
-/* Carrusel */
 .carousel {
     position: relative;
     width: 100%;
-    height: 320px; /* 300px para imágenes + 20px de padding/margen */
+    height: 320px;
     overflow: hidden;
     margin: 0 auto;
     z-index: 800;
@@ -60,22 +59,22 @@ body {
 
 .carousel-inner {
     display: flex;
-    width: 500%; /* 100% por cada una de las 5 imágenes */
+    width: 500%;
     height: 100%;
     transition: transform 0.5s ease;
 }
 
 .carousel-item {
-    width: 20%; /* 100% / 5 imágenes */
+    width: 20%;
     height: 100%;
     flex-shrink: 0;
-    padding: 10px; /* Espaciado para que encajen bien */
+    padding: 2px; /* Padding reducido para que encajen las imágenes */
 }
 
 .carousel-item img {
     width: 100%;
-    height: 300px; /* Altura fija para imágenes de 300px x 300px */
-    object-fit: cover; /* Asegura que se vean completas */
+    height: 300px;
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

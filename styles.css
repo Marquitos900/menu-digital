@@ -111,7 +111,7 @@ body {
 
 
 .main-header {
-    background: linear-gradient(180deg, #E20B2C, #808080);
+    backgroundcolor: #E20B2C;
     padding: 2rem;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);

@@ -472,3 +472,20 @@ footer {
         font-size: 0.8rem;
     }
 }
+
+.order-btn {
+    display: block;
+    margin: 10px auto 0;
+    padding: 8px 15px;
+    background-color: #E20B2C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #A10720;
+}

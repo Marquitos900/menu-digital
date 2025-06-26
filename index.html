@@ -179,6 +179,14 @@
 
         // Auto-slide cada 3 segundos
         setInterval(() => moveCarousel(1), 3000);
+
+       function orderViaWhatsApp(itemName) {
+    const phoneNumber = '+5218994239987';
+    const message = encodeURIComponent(`Hola, quiero ordenar ${itemName}.`);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappURL, '_blank');
+}
+        
     </script>
 </body>
 </html>

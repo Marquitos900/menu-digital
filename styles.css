@@ -6,11 +6,87 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #36454F;
+    background-color: #f4f4f4; /* Gris claro para un look limpio */
     color: #333;
     line-height: 1.6;
     font-size: 16px;
 }
+
+/* --- Navbar Superior --- */
+.navbar {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-logo img {
+    max-width: 50px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover img {
+    transform: scale(1.1);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E20B2C;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #E20B2C;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
 
 /* Animación del texto de bienvenida */
 .welcome-message {
@@ -47,17 +123,30 @@ body {
     100% { opacity: 0; display: none; }
 }
 
+.offers-section {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
 /* --- Carrusel de Imágenes --- */
 .carousel {
     position: relative;
-    width: 650px; /* Ancho fijo para el carrusel, puedes ajustarlo */
-    height: 320px; /* Altura del carrusel */
+    width: 80%; /* Hacemos el carrusel más ancho */
+    max-width: 900px; /* Le damos un ancho máximo */
+    height: 400px; /* Aumentamos la altura */
     overflow: hidden;
     margin: 20px auto; /* Centra el carrusel y añade margen */
     z-index: 800;
     background: #fff;
     border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para el recuadro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
 }
 
 .carousel-inner {
@@ -118,6 +207,7 @@ body {
     border-bottom: 2px solid #808080;
     position: relative;
     z-index: 800;
+    margin-top: 80px; /* Añadido para que no se solape con la navbar */
 }
 
 .main-header .logo img {
@@ -145,47 +235,7 @@ body {
     min-height: calc(100vh - 80px);
 }
 
-.sidebar {
-    width: 250px;
-    background: #808080;
-    color: #fff;
-    padding: 2rem;
-    position: fixed;
-    height: 100%;
-    overflow-y: auto;
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.6);
-    border-right: 1px solid #E20B2C;
-}
-
-.sidebar nav ul {
-    list-style: none;
-}
-
-.sidebar nav ul li {
-    margin-bottom: 1.5rem;
-}
-
-.sidebar nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 1rem 1.5rem;
-    display: block;
-    background: rgba(226, 11, 44, 0.2);
-    border-radius: 10px;
-    transition: all 0.4s ease;
-}
-
-.sidebar nav ul li a:hover {
-    background: #E20B2C;
-    transform: translateX(10px) scale(1.05);
-    color: #fff;
-}
-
 main {
-    margin-left: 250px;
     padding: 2.5rem;
     flex-grow: 1;
     max-width: 1100px;
@@ -235,7 +285,7 @@ main::before {
 }
 
 .accordion-content {
-    display: none;
+    display: block; /* Mostramos el contenido por defecto */
     padding: 1.5rem 0;
 }
 
@@ -251,14 +301,15 @@ main::before {
     background-color: #fff;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease;
+    border-radius: 10px; /* Bordes más sutiles */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+    transition: all 0.3s ease;
+    text-align: center; /* Centramos todo el contenido */
 }
 
 .menu-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada al pasar el cursor */
 }
 
 .menu-item h3 {
@@ -344,12 +395,8 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .sidebar {
-        width: 200px;
-    }
-
     main {
-        margin-left: 200px;
+        margin-left: 0;
     }
 
     .main-header h1 {
@@ -368,12 +415,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .sidebar {
-        width: 180px;
-    }
-
     main {
-        margin-left: 180px;
+        margin-left: 0;
     }
 
     .menu-section h2 {
@@ -414,31 +457,6 @@ footer {
 
     .container {
         flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 1.5rem;
-        box-shadow: none; /* Elimina la sombra para que se integre mejor */
-        border-right: none; /* Elimina el borde */
-        border-bottom: 1px solid #E20B2C; /* Añade un borde inferior */
-    }
-
-    .sidebar nav ul {
-        display: flex; /* Convierte la navegación en una fila */
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-        justify-content: center; /* Centra los elementos */
-    }
-
-    .sidebar nav ul li {
-        margin: 0.5rem 0.75rem; /* Ajusta los márgenes para la navegación horizontal */
-    }
-
-    .sidebar nav ul li a {
-        font-size: 1rem;
-        padding: 0.75rem;
     }
 
     main {

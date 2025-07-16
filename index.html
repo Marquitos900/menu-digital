@@ -9,6 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logo cabritos moreno.png" alt="Logo Cabritos Moreno">
+                <span>Cabritos Moreno</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#cortes-finos-sanjuan">Cortes Finos</a></li>
+                <li><a href="#cabritos">Cabritos</a></li>
+                <li><a href="#extras">Extras</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="welcome-message">
         <h2>Más de 40 años nos respaldan</h2>
     </div>
@@ -18,38 +32,31 @@
         </div>
         <h1>Cabritos Moreno</h1>
     </header>
-    <div class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item">
-                <img src="carrucel.jpg" alt="Cabrito Asado 2">
+    <section class="offers-section">
+        <h2 class="section-title">Nuestras Ofertas</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="carrucel.jpg" alt="Cabrito Asado 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="carrucel-02.jpg" alt="Cortes Finos">
+                </div>
+                <div class="carousel-item">
+                    <img src="carrucel-03.jpg" alt="Extras">
+                </div>
+                <div class="carousel-item">
+                    <img src="carrucel-04.jpg" alt="Imagen 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="carrucel-05.jpg" alt="Imagen 5">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="carrucel-02.jpg" alt="Cortes Finos">
-            </div>
-            <div class="carousel-item">
-                <img src="carrucel-03.jpg" alt="Extras">
-            </div>
-            <div class="carousel-item">
-                <img src="carrucel-04.jpg" alt="Imagen 4">
-            </div>
-            <div class="carousel-item">
-                <img src="carrucel-05.jpg" alt="Imagen 5">
-            </div>
+            <button class="carousel-btn prev">❮</button>
+        <button class="carousel-btn next">❯</button>
         </div>
-        <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
-        <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
-    </div>
+    </section>
     <div class="container">
-        <aside class="sidebar">
-            <nav>
-                <ul>
-                    <li><a href="#cortes-finos-sanjuan">Cortes Finos San Juan</a></li>
-                    <li><a href="#cabritos">Cabritos y Derivados</a></li>
-                    <li><a href="#extras">Extras</a></li>
-                    <li><a href="#contacto">Contáctanos</a></li>
-                </ul>
-            </nav>
-        </aside>
        <main>
     <section id="cabritos" class="menu-section">
         <h2 class="accordion-toggle">Cabritos y Derivados</h2>
@@ -58,43 +65,43 @@
                 <h3>Cabrito Completo</h3>
                 <p>Aprox. 5-7 kg por cabrito en canal, incluye cabezita y asaduras.</p>
                 <span>$1,600</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Cabrito Completo')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Pura Canal</h3>
                 <p>Aprox. 5-7 kg por cabrito en canal, sin derivados.</p>
                 <span>$1,550</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Pura Canal')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Cabrito Supremo</h3>
                 <p>Aprox. 5-7 kg por cabrito en canal, corte premium con derivados.</p>
                 <span>$1,800</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Cabrito Supremo')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Asadura con Cabeza Extra</h3>
                 <p>Complemento ideal para tu pedido.</p>
                 <span>$150</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Asadura con Cabeza Extra')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Cabezita Sola</h3>
                 <p>Perfecta para preparar en diferentes estilos.</p>
                 <span>$80</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Cabezita Sola')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Carne Seca</h3>
                 <p>Tradicional y deliciosa, lista para disfrutar.</p>
                 <span>$300</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Carne Seca')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Lechones y Borreguitos</h3>
                 <p>Lechones de 6 a 12 kg ($1,500), de 12 kg para arriba ($1,800).</p>
                 <span>$1,500</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Lechones y Borreguitos')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
         </div>
     </section>
@@ -107,19 +114,19 @@
                 <h3>Kit-Mix 1</h3>
                 <p>1 kg T-Bone • 1 kg Prime Rib • 1 kg Sirloin con Hueso • 1 kg Costilla Cargada • 1 kg Flecha</p>
                 <span>$1,450</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Kit-Mix 1')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Kit-Mix 2</h3>
                 <p>1 kg T-Bone • 1 kg Prime Rib • 2 kg Costilla sin Hueso • 1 kg Sirloin</p>
                 <span>$1,500</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Kit-Mix 2')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Kit-Mix 3</h3>
                 <p>1 kg New York • 2 kg Ribeye • 2 kg Costilla Norteña</p>
                 <span>$1,850</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Kit-Mix 3')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
         </div>
     </section>
@@ -131,13 +138,13 @@
                 <h3>Sazonadores Especiales</h3>
                 <p>Perfectos para resaltar el sabor de tus cortes.</p>
                 <span><a href="https://wa.me/+5218994239987?text=Hola,%20quiero%20consultar%20el%20precio%20de%20Sazonadores%20Especiales" target="_blank">Consulta precio</a></span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Sazonadores Especiales')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
             <div class="menu-item">
                 <h3>Ataúdes para Cabritos o Borregos</h3>
                 <p>Ideales para asados completos desde $10,000 hasta $12,000.</p>
                 <span>$10,000</span>
-                <button class="order-btn" onclick="orderViaWhatsApp('Ataúdes para Cabritos o Borregos')">Ordenar</button>
+                <button class="order-btn">Ordenar</button>
             </div>
         </div>
     </section>
@@ -154,39 +161,46 @@
         <p>© 2025 Cabritos Moreno. Todos los derechos reservados.</p>
     </footer>
     <script>
-        document.querySelectorAll('.accordion-toggle').forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const content = toggle.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-
-        let currentSlide = 0;
+        // Lógica del Carrusel
+        const carouselInner = document.querySelector('.carousel-inner');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
         const slides = document.querySelectorAll('.carousel-item');
         const totalSlides = slides.length;
-
-        function moveCarousel(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            updateCarousel();
-        }
+        let currentSlide = 0;
 
         function updateCarousel() {
-            // ¡Esta es la línea clave que se corrigió!
-            // Ahora el offset es del 100% por cada slide, ya que cada carousel-item ocupa el 100% del ancho.
             const offset = -currentSlide * 100;
-            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+            carouselInner.style.transform = `translateX(${offset}%)`;
         }
 
-        // Auto-slide cada 3 segundos
-        setInterval(() => moveCarousel(1), 3000);
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
 
-       function orderViaWhatsApp(itemName) {
-    const phoneNumber = '+5218994239987';
-    const message = encodeURIComponent(`Hola, quiero ordenar ${itemName}.`);
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappURL, '_blank');
-}
-        
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 3000);
+
+        // Lógica de los botones de Ordenar
+        const orderButtons = document.querySelectorAll('.order-btn');
+        orderButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const menuItem = button.closest('.menu-item');
+                const itemName = menuItem.querySelector('h3').textContent;
+                const phoneNumber = '+5218994239987';
+                const message = encodeURIComponent(`Hola, quiero ordenar ${itemName}.`);
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+                window.open(whatsappURL, '_blank');
+            });
+        });
     </script>
 </body>
 </html>

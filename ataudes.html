@@ -109,7 +109,29 @@
         <p>© 2025 Cabritos Moreno. Todos los derechos reservados.</p>
     </footer>
 
-    // Lógica de la Galería Lightbox
+    <!-- Galería Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <a class="prev-btn">&#10094;</a>
+        <a class="next-btn">&#10095;</a>
+    </div>
+
+    <script>
+        // Lógica de los botones de Ordenar
+        const orderButtons = document.querySelectorAll('.order-btn');
+        orderButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productCard = button.closest('.product-card');
+                const productName = productCard.querySelector('h2').textContent;
+                const phoneNumber = '+5218994239987';
+                const message = encodeURIComponent(`Hola, estoy interesado en el ${productName}.`);
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+                window.open(whatsappURL, '_blank');
+            });
+        });
+
+        // Lógica de la Galería Lightbox
         const galleryButtons = document.querySelectorAll('.gallery-btn');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -167,14 +189,5 @@
             }
         });
     </script>
-
-    <!-- Galería Lightbox -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-btn">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <a class="prev-btn">&#10094;</a>
-        <a class="next-btn">&#10095;</a>
-    </div>
-
 </body>
 </html>

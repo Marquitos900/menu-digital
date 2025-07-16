@@ -15,11 +15,16 @@
                 <img src="logo cabritos moreno.png" alt="Logo Cabritos Moreno">
                 <span>Cabritos Moreno</span>
             </a>
-            <ul class="nav-menu">
+            <ul class="nav-menu mobile-hidden">
                 <li><a href="index.html">Menú</a></li>
                 <li><a href="ataudes.html">Ataúdes</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
     <div class="welcome-message">
@@ -160,6 +165,14 @@
         <p>© 2025 Cabritos Moreno. Todos los derechos reservados.</p>
     </footer>
     <script>
+        // Lógica del Menú Hamburguesa
+        const hamburger = document.querySelector('.hamburger-icon');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
         // Lógica del Carrusel
         const carouselInner = document.querySelector('.carousel-inner');
         const prevBtn = document.querySelector('.carousel-btn.prev');

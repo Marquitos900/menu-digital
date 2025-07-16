@@ -654,3 +654,72 @@ footer {
 .prev-btn:hover, .next-btn:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
+
+/* --- Diseño Responsivo Adicional --- */
+@media (max-width: 768px) {
+    .hero-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .product-card {
+        flex-direction: column;
+    }
+
+    .product-details {
+        padding: 1.5rem;
+    }
+
+    .product-details h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-details .price {
+        font-size: 1.5rem;
+    }
+
+    .nav-menu {
+        display: none; /* Ocultar menú en móvil para futura implementación de hamburguesa */
+    }
+}
+
+/* --- Estilos del Menú Hamburguesa --- */
+.hamburger-icon {
+    display: none; /* Oculto por defecto */
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #333;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .nav-menu.mobile-hidden {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: block; /* Visible en móvil */
+    }
+
+    .nav-menu.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Altura de la navbar */
+        right: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+    }
+
+    .nav-menu.show li {
+        text-align: center;
+        margin: 10px 0;
+    }
+}

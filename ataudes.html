@@ -15,11 +15,16 @@
                 <img src="logo cabritos moreno.png" alt="Logo Cabritos Moreno">
                 <span>Cabritos Moreno</span>
             </a>
-            <ul class="nav-menu">
+            <ul class="nav-menu mobile-hidden">
                 <li><a href="index.html">Menú</a></li>
                 <li><a href="ataudes.html">Ataúdes</a></li>
                 <li><a href="index.html#contacto">Contacto</a></li>
             </ul>
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -118,6 +123,14 @@
     </div>
 
     <script>
+        // Lógica del Menú Hamburguesa
+        const hamburger = document.querySelector('.hamburger-icon');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
         // Lógica de los botones de Ordenar
         const orderButtons = document.querySelectorAll('.order-btn');
         orderButtons.forEach(button => {

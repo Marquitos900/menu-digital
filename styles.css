@@ -580,7 +580,10 @@ footer {
     position: relative;
     z-index: 1;
     font-size: 3rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    display: inline-block;
 }
 
 /* --- Estilos de la Galería Lightbox --- */

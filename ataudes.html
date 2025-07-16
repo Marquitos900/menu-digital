@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Ataúdes - Cabritos Moreno</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo cabritos moreno.png" alt="Logo Cabritos Moreno">
+                <span>Cabritos Moreno</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Menú</a></li>
+                <li><a href="ataudes.html">Ataúdes</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="main-header hero-header" style="background-image: url('images/ataudes/Ataudportada.jpg');">
+        <h1>Catálogo de Asadores (Ataúdes)</h1>
+    </header>
+
+    <div class="container">
+        <main>
+            <section class="catalog-section">
+                
+                <!-- Ataúd 01 -->
+                <div class="product-card" data-gallery="ataud1">
+                    <div class="product-image">
+                        <img src="images/ataudes/Ataudprincipal01.jpg" alt="Ataúd Modelo 1">
+                    </div>
+                    <div class="product-details">
+                        <h2>Ataúd Modelo 01</h2>
+                        <span class="price">$12,500 MXN</span>
+                        <ul>
+                            <li><strong>Medidas:</strong> 1m de ancho por 60cm de fondo</li>
+                            <li>Mesas laterales abatibles</li>
+                            <li>Estante inferior para leña</li>
+                            <li>Diseño para cabrito al pastor</li>
+                            <li>Luz interior</li>
+                            <li>Charola de acero inoxidable</li>
+                            <li>Interior completo en acero inoxidable</li>
+                            <li>Parrilla superior para asar</li>
+                            <li>Acabados en madera</li>
+                        </ul>
+                        <button class="gallery-btn">Ver Galería</button>
+                        <button class="order-btn">Ordenar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Ataúd 02 -->
+                <div class="product-card" data-gallery="ataud2">
+                    <div class="product-image">
+                        <img src="images/ataudes/Ataudprincipal02.jpg" alt="Ataúd Modelo 2">
+                    </div>
+                    <div class="product-details">
+                        <h2>Ataúd Modelo 02</h2>
+                        <span class="price">$11,000 MXN</span>
+                        <ul>
+                            <li><strong>Medidas:</strong> 1m de ancho por 60cm de fondo</li>
+                            <li>Estante inferior para leña</li>
+                            <li>Diseño para cabrito al pastor</li>
+                            <li>Luz interior</li>
+                            <li>Charola de acero inoxidable</li>
+                            <li>Interior completo en acero inoxidable</li>
+                            <li>Parrilla superior para asar</li>
+                            <li>Acabados en lámina antiderrapante</li>
+                        </ul>
+                        <button class="gallery-btn">Ver Galería</button>
+                        <button class="order-btn">Ordenar por WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Ataúd 03 -->
+                <div class="product-card" data-gallery="ataud3">
+                    <div class="product-image">
+                        <img src="images/ataudes/Ataudprincipal03.jpg" alt="Ataúd Modelo 3">
+                    </div>
+                    <div class="product-details">
+                        <h2>Ataúd Modelo 03</h2>
+                        <span class="price">$10,000 MXN</span>
+                        <ul>
+                            <li><strong>Medidas:</strong> 1m de ancho por 60cm de fondo</li>
+                            <li>Estante inferior para leña</li>
+                            <li>Diseño para cabrito al pastor</li>
+                            <li>Luz interior</li>
+                            <li>Charola de acero inoxidable</li>
+                            <li>Interior completo en acero inoxidable</li>
+                            <li>Parrilla superior para asar</li>
+                            <li>Acabados en madera quemada</li>
+                        </ul>
+                        <button class="gallery-btn">Ver Galería</button>
+                        <button class="order-btn">Ordenar por WhatsApp</button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2025 Cabritos Moreno. Todos los derechos reservados.</p>
+    </footer>
+
+    // Lógica de la Galería Lightbox
+        const galleryButtons = document.querySelectorAll('.gallery-btn');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        const galleryImages = {
+            'ataud1': ['images/ataudes/Ataudprincipal01.jpg', 'images/ataudes/Ataud01.jpg'],
+            'ataud2': ['images/ataudes/Ataudprincipal02.jpg', 'images/ataudes/Ataud02.jpg'],
+            'ataud3': ['images/ataudes/Ataudprincipal03.jpg', 'images/ataudes/Ataud03.jpg']
+        };
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        galleryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const galleryId = button.closest('.product-card').dataset.gallery;
+                currentGallery = galleryImages[galleryId];
+                currentIndex = 0;
+                openLightbox();
+            });
+        });
+
+        function openLightbox() {
+            lightbox.style.display = 'block';
+            updateLightboxImage();
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+
+        function updateLightboxImage() {
+            lightboxImg.src = currentGallery[currentIndex];
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateLightboxImage();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateLightboxImage();
+        });
+
+        // Cerrar con clic fuera de la imagen
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+
+    <!-- Galería Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <a class="prev-btn">&#10094;</a>
+        <a class="next-btn">&#10095;</a>
+    </div>
+
+</body>
+</html>

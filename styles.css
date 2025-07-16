@@ -1,20 +1,9 @@
-.title-container {
-    text-align: center;
-    padding: 2rem 0;
-    background-color: #f4f4f4;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
 
-.section-title-button {
-    display: inline-block;
-    background-color: #E20B2C;
-    color: #fff;
-    font-family: 'Ultra', serif;
-    font-size: 2rem;
-    padding: 10px 30px;
-    border-radius: 50px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border: 3px solid #fff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -588,13 +577,7 @@ footer {
 }
 
 .hero-header h1 {
-    position: relative;
-    z-index: 1;
-    font-size: 3rem;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    display: inline-block;
+    display: none; /* Ocultamos el H1 que ya no usamos */
 }
 
 /* --- Estilos de la Galería Lightbox --- */

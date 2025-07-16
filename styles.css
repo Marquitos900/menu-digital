@@ -1,7 +1,7 @@
 .title-container {
     text-align: center;
     padding: 2rem 0;
-    background-color: #f4f4f4; /* Asegura que tenga un fondo consistente */
+    background-color: #f4f4f4;
 }
 
 .section-title-button {
@@ -571,11 +571,9 @@ footer {
 
 /* --- Estilos de la Cabecera con Imagen (Hero) -- */
 .hero-header {
-    padding: 6rem 2rem;
+    min-height: 60vh; /* Aumentamos la altura de la portada */
     background-size: cover;
     background-position: center;
-    color: #fff;
-    text-align: center;
     position: relative;
 }
 

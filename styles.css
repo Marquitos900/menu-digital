@@ -545,16 +545,25 @@ footer {
 .product-details h2 {
     font-family: 'Cinzel', serif;
     font-size: 2.2rem;
-    color: #2c3e50;
+    color: #800000; /* Color vino */
+    background-color: #f5f5dc; /* Color beige */
     margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 .product-details .price {
-    display: block;
+    display: inline-block;
     font-size: 2rem;
     font-weight: 700;
     color: #E20B2C;
+    background-color: #fff;
+    border: 2px solid #E20B2C;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
     margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .product-details ul {

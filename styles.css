@@ -146,28 +146,33 @@ body {
 
 /* --- Header --- */
 .main-header {
-    padding: 8rem 0 4rem;
+    height: 100vh;
     text-align: center;
     position: relative;
-    margin-top: 80px;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/portada/portada cm.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 5rem;
 }
 
-.main-header .logo img {
-    max-width: 180px;
-    border-radius: 50%;
-    border: 4px solid var(--primary-color);
-    margin-bottom: 1.5rem;
-    box-shadow: 0 0 25px rgba(0,0,0,0.7);
-}
-
-.main-header h1 {
+.hero-button {
+    padding: 1rem 3rem;
+    background-color: #E20B2C;
+    color: white;
+    text-decoration: none;
     font-family: var(--header-font);
-    font-size: 4rem;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.hero-button:hover {
+    background-color: #A10720;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
 }
 
 /* --- Carousel --- */
@@ -209,7 +214,7 @@ body {
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Changed from cover to contain */
 }
 
 .carousel-btn {

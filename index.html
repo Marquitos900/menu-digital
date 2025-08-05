@@ -32,10 +32,7 @@
     </div>
 
     <header class="main-header">
-        <div class="logo">
-            <img src="logo cabritos moreno.png" alt="Logo Cabritos Moreno">
-        </div>
-        <h1>Cabritos Moreno</h1>
+        <a href="#menu" class="hero-button">Comprar</a>
     </header>
 
     <section class="offers-section">
@@ -55,7 +52,7 @@
 
     <div class="container">
         <main>
-            <div class="menu-container">
+            <div id="menu" class="menu-container">
                 <div class="menu-tabs">
                     <button class="tab-link active" data-tab="cabritos">Cabritos y Derivados</button>
                     <button class="tab-link" data-tab="cortes">Cortes Finos San Juan</button>
@@ -176,7 +173,7 @@
 
         function updateCarousel() {
             const offset = -currentSlide * 100;
-            carouselInner.style.transform = `translateX(${offset}%`;
+            carouselInner.style.transform = `translateX(${offset}%)`;
         }
 
         prevBtn.addEventListener('click', () => {

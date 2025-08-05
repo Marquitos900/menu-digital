@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Ataúdes - Cabritos Moreno</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -29,7 +28,7 @@
     </nav>
 
     <header class="main-header hero-header" style="background-image: url('images/ataudes/Ataudportada.jpg');">
-        <!-- Título eliminado de la portada -->
+        <!-- No title needed here, the background image is the hero -->
     </header>
 
     <div class="container">
@@ -130,7 +129,6 @@
         // Lógica del Menú Hamburguesa
         const hamburger = document.querySelector('.hamburger-icon');
         const navMenu = document.querySelector('.nav-menu');
-
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('show');
         });
@@ -199,7 +197,6 @@
             updateLightboxImage();
         });
 
-        // Cerrar con clic fuera de la imagen
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 closeLightbox();

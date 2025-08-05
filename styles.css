@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --primary-color: #B8860B; /* DarkGoldenRod */
+    --secondary-color: #8B4513; /* SaddleBrown */
+    --background-color: #1a1a1a;
+    --surface-color: #2c2c2c;
+    --text-color: #f5f5f5;
+    --header-font: 'Playfair Display', serif;
+    --body-font: 'Roboto', sans-serif;
+}
 
 * {
     margin: 0;
@@ -7,24 +17,31 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f4f4f4; /* Gris claro para un look limpio */
-    color: #333;
-    line-height: 1.6;
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
     font-size: 16px;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
 }
 
-/* --- Navbar Superior --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Navbar --- */
 .navbar {
-    background-color: #fff;
+    background-color: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
     padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
+    z-index: 1000;
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .nav-container {
@@ -33,39 +50,41 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #333;
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
+    color: var(--text-color);
+    font-family: var(--header-font);
+    font-size: 1.8rem;
     font-weight: 700;
 }
 
 .nav-logo img {
-    max-width: 50px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
+    max-width: 60px;
+    margin-right: 15px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .nav-logo:hover img {
-    transform: scale(1.1);
+    transform: rotate(15deg) scale(1.1);
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-menu li a {
-    color: #333;
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: 600;
-    padding-bottom: 5px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding-bottom: 8px;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -76,447 +95,344 @@ body {
     width: 0;
     height: 2px;
     bottom: 0;
-    left: 0;
-    background-color: #E20B2C;
-    transition: width 0.3s ease;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    transition: width 0.4s ease;
 }
 
 .nav-menu li a:hover {
-    color: #E20B2C;
+    color: var(--primary-color);
 }
 
 .nav-menu li a:hover::after {
     width: 100%;
 }
 
-
-/* Animación del texto de bienvenida */
+/* --- Welcome Animation --- */
 .welcome-message {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    animation: fadeOut 3s forwards;
+    z-index: 1001;
+    animation: fadeOut 3s 1s forwards;
 }
 
 .welcome-message h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 2.8rem;
+    font-family: var(--header-font);
+    font-size: 3.5rem;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 15px var(--primary-color);
     text-align: center;
-    animation: slideIn 1s ease-in-out;
+    animation: slideIn 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 @keyframes slideIn {
-    0% { transform: translateY(-60px); opacity: 0; }
+    0% { transform: translateY(-80px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes fadeOut {
     0% { opacity: 1; }
     80% { opacity: 1; }
-    100% { opacity: 0; display: none; }
+    100% { opacity: 0; visibility: hidden; }
 }
 
-.offers-section {
-    padding: 2rem 0;
+/* --- Header --- */
+.main-header {
+    padding: 8rem 0 4rem;
     text-align: center;
+    position: relative;
+    margin-top: 80px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/portada/portada cm.jpg') no-repeat center center/cover;
+}
+
+.main-header .logo img {
+    max-width: 180px;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+.main-header h1 {
+    font-family: var(--header-font);
+    font-size: 4rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* --- Carousel --- */
+.offers-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--surface-color);
 }
 
 .section-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1.5rem;
+    font-family: var(--header-font);
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
 }
 
-/* --- Carrusel de Imágenes --- */
 .carousel {
     position: relative;
-    width: 80%; /* Hacemos el carrusel más ancho */
-    max-width: 900px; /* Le damos un ancho máximo */
-    height: 400px; /* Aumentamos la altura */
+    width: 90%;
+    max-width: 1000px;
+    height: 450px;
     overflow: hidden;
-    margin: 20px auto; /* Centra el carrusel y añade margen */
-    z-index: 800;
-    background: #fff;
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-inner {
     display: flex;
-    width: 100%; /* El inner ahora abarca el 100% del carrusel */
     height: 100%;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    min-width: 100%; /* Cada ítem ocupa el 100% del ancho del carrusel */
+    min-width: 100%;
     height: 100%;
-    flex-shrink: 0; /* Evita que los ítems se encojan */
-    display: flex; /* Para centrar la imagen dentro del item */
-    justify-content: center; /* Centrado horizontal de la imagen */
-    align-items: center; /* Centrado vertical de la imagen */
-    padding: 0; /* Quitamos el padding del item */
 }
 
 .carousel-item img {
-    width: 300px; /* Ancho fijo de la imagen (manteniendo tu especificación) */
-    height: 300px; /* Altura fija de la imagen (manteniendo tu especificación) */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(226, 11, 44, 0.7);
+    background: rgba(184, 134, 11, 0.7);
     color: #fff;
     border: none;
-    padding: 0.5rem;
+    padding: 0.8rem 1.2rem;
     cursor: pointer;
-    font-size: 1rem;
-    z-index: 810;
+    font-size: 1.5rem;
+    z-index: 10;
     transition: background 0.3s ease;
-    border-radius: 5px; /* Bordes redondeados para los botones */
+    border-radius: 50%;
 }
 
 .carousel-btn:hover {
-    background: rgba(226, 11, 44, 0.9);
+    background: rgba(184, 134, 11, 1);
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 20px; }
+.next { right: 20px; }
 
-/* --- Fin Carrusel de Imágenes --- */
-
-
-.main-header {
-    background-color: #E20B2C;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    border-bottom: 2px solid #808080;
-    position: relative;
-    z-index: 800;
-    margin-top: 80px; /* Añadido para que no se solape con la navbar */
+/* --- Menu Tabs --- */
+.menu-container {
+    padding: 4rem 0;
 }
 
-.main-header .logo img {
-    max-width: 150px;
-    height: auto;
-    border-radius: 15px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.main-header .logo img:hover {
-    transform: scale(1.05);
-}
-
-.main-header h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.container {
+.menu-tabs {
     display: flex;
-    min-height: calc(100vh - 80px);
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-main {
-    padding: 2.5rem;
-    flex-grow: 1;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-    background: url('images/Cabritos moreno Menu.jpg') no-repeat center center/cover;
-    position: relative;
-    min-height: 100vh;
-}
-
-.menu-section {
-    position: relative;
-    z-index: 2;
-    margin-bottom: 2.5rem;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    border: 1px solid #808080;
-}
-
-.menu-section h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    color: #E20B2C;
-    padding: 0.75rem 0;
-    margin-bottom: 1.5rem;
-    border-bottom: 3px solid #808080;
-    text-align: center;
+.tab-link {
+    padding: 1rem 2rem;
     cursor: pointer;
-    transition: color 0.3s ease;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 8px;
+    font-family: var(--header-font);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    font-weight: 700;
 }
 
-.menu-section h2:hover {
-    color: #fff; /* Este color blanco solo funcionará si el fondo cambia al pasar el mouse, de lo contrario no será visible */
+.tab-link:hover, .tab-link.active {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(184, 134, 11, 0.4);
 }
 
-.accordion-content {
-    display: block; /* Mostramos el contenido por defecto */
-    padding: 1.5rem 0;
+.menu-content {
+    display: none;
+    animation: fadeIn 0.5s;
 }
 
-.menu-section p {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-style: italic;
+.menu-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .menu-item {
-    background-color: #fff;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 10px; /* Bordes más sutiles */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+    background-color: var(--surface-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    text-align: center; /* Centramos todo el contenido */
+    text-align: center;
+    border-left: 5px solid var(--secondary-color);
 }
 
 .menu-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada al pasar el cursor */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    border-left-color: var(--primary-color);
 }
 
 .menu-item h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    color: #E20B2C;
-    margin-bottom: 0.75rem;
-    text-align: center;
+    font-family: var(--header-font);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .menu-item p {
     font-size: 1rem;
-    color: #333;
-    text-align: center;
+    color: #ccc;
+    margin-bottom: 1rem;
 }
 
 .menu-item span {
     display: block;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #E20B2C;
-    margin-top: 0.75rem;
-    text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 1rem;
 }
 
 .menu-item span a {
-    color: #E20B2C;
+    color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-.menu-item span a:hover {
-    color: #808080; /* Cambiado a gris para mejor contraste si el h2 no cambia de fondo */
-    text-decoration: underline;
-}
-
+/* --- Contact --- */
 .contact {
-    position: relative;
-    z-index: 2;
-    padding: 2.5rem;
-    background: #fff;
+    padding: 4rem;
+    background-color: var(--surface-color);
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    border: 1px solid #808080;
     text-align: center;
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .contact h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    color: #E20B2C;
+    font-family: var(--header-font);
+    font-size: 2.5rem;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
-    border-bottom: 3px solid #808080;
 }
 
 .contact p {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .contact p a {
-    color: #E20B2C;
+    color: var(--primary-color);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
 .contact p a:hover {
     text-decoration: underline;
-    color: #808080; /* Cambiado a gris para mejor contraste */
+    color: #fff;
 }
 
+/* --- Footer --- */
 footer {
     text-align: center;
-    padding: 1.5rem;
-    background: #808080;
-    color: #fff;
-    width: 100%;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
-    border-top: 1px solid #E20B2C;
+    padding: 2rem;
+    background: #111;
+    color: #aaa;
+    margin-top: 4rem;
+    border-top: 1px solid var(--primary-color);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    main {
-        margin-left: 0;
-    }
-
-    .main-header h1 {
-        font-size: 2rem;
-    }
-
-    .carousel {
-        width: 500px; /* Ajuste para pantallas medianas */
-        height: 280px;
-    }
-
-    .carousel-item img {
-        width: 260px; /* Ajuste el tamaño de la imagen */
-        height: 260px;
-    }
-}
-
-@media (max-width: 768px) {
-    main {
-        margin-left: 0;
-    }
-
-    .menu-section h2 {
-        font-size: 1.8rem;
-    }
-
-    .menu-item h3 {
-        font-size: 1.3rem;
-    }
-
-    .carousel {
-        width: 100%; /* El carrusel se vuelve 100% de ancho en pantallas pequeñas */
-        height: 240px;
-    }
-
-    .carousel-item img {
-        width: 220px;
-        height: 220px;
-    }
-}
-
-@media (max-width: 480px) {
-    .welcome-message h2 {
-        font-size: 2rem;
-    }
-
-    .main-header {
-        padding: 1.5rem;
-    }
-
-    .main-header h1 {
-        font-size: 1.8rem;
-    }
-
-    .main-header .logo img {
-        max-width: 120px;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-
-    main {
-        margin-left: 0;
-        padding: 1.5rem;
-    }
-
-    .menu-section h2 {
-        font-size: 1.6rem;
-    }
-
-    .menu-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .menu-item p {
-        font-size: 0.9rem;
-    }
-
-    .carousel {
-        height: 180px;
-    }
-
-    .carousel-item img {
-        width: 160px;
-        height: 160px;
-    }
-
-    .carousel-btn {
-        padding: 0.3rem;
-        font-size: 0.8rem;
-    }
-}
-
+/* --- Buttons --- */
 .order-btn {
-    display: block;
-    margin: 10px auto 0;
-    padding: 8px 15px;
-    background-color: #E20B2C;
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 12px 30px;
+    background-color: var(--secondary-color);
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
 .order-btn:hover {
-    background-color: #A10720;
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(184, 134, 11, 0.4);
 }
 
-/* --- Estilos del Catálogo de Ataúdes (Moderno) --- */
+/* --- Ataudes Page --- */
+.hero-header {
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 .catalog-section {
-    padding: 3rem 0;
+    padding: 4rem 0;
 }
 
 .product-card {
     display: flex;
-    background-color: #fff;
+    background-color: var(--surface-color);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     margin-bottom: 3rem;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--secondary-color);
 }
 
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    border-color: var(--primary-color);
 }
 
 .product-image {
@@ -539,31 +455,21 @@ footer {
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .product-details h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 2.2rem;
-    color: #800000; /* Color vino */
-    background-color: #f5f5dc; /* Color beige */
+    font-family: var(--header-font);
+    font-size: 2.5rem;
+    color: var(--primary-color);
     margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    display: inline-block;
 }
 
 .product-details .price {
     display: inline-block;
     font-size: 2rem;
     font-weight: 700;
-    color: #E20B2C;
-    background-color: #fff;
-    border: 2px solid #E20B2C;
-    padding: 0.5rem 1.5rem;
-    border-radius: 8px;
+    color: var(--primary-color);
     margin-bottom: 2rem;
-    margin-top: 1rem;
 }
 
 .product-details ul {
@@ -580,8 +486,8 @@ footer {
 }
 
 .product-details ul li::before {
-    content: '✔';
-    color: #27ae60;
+    content: '🔥';
+    color: var(--primary-color);
     margin-right: 10px;
     font-size: 1.2rem;
 }
@@ -592,105 +498,59 @@ footer {
     margin-top: auto;
 }
 
-.gallery-btn, .order-btn {
+.gallery-btn {
     flex-grow: 1;
     padding: 12px 20px;
-    border: 2px solid transparent;
+    border: 2px solid var(--secondary-color);
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease;
     text-align: center;
-}
-
-.gallery-btn {
-    background-color: #34495e;
-    color: #fff;
+    background-color: transparent;
+    color: var(--text-color);
 }
 
 .gallery-btn:hover {
-    background-color: #2c3e50;
-    transform: translateY(-2px);
-}
-
-.order-btn {
-    background-color: #E20B2C;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
     color: #fff;
 }
 
-.order-btn:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
-}
-
-/* --- Estilos de la Cabecera con Imagen (Hero) -- */
-.hero-header {
-    min-height: 60vh; /* Aumentamos la altura de la portada */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.hero-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hero-header h1 {
-    display: none; /* Ocultamos el H1 que ya no usamos */
-}
-
-/* --- Estilos de la Galería Lightbox --- */
-.gallery-btn {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-right: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.gallery-btn:hover {
-    background-color: #555;
-}
-
+/* --- Lightbox --- */
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 1001;
     padding-top: 60px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
 }
 
 .lightbox-content {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 700px;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.close-btn, .prev-btn, .next-btn {
+    color: #f1f1f1;
+    transition: 0.3s;
 }
 
 .close-btn {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
-    transition: 0.3s;
     cursor: pointer;
 }
 
@@ -701,88 +561,66 @@ footer {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
     font-weight: bold;
     font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none;
 }
 
-.next-btn {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.next-btn { right: 0; border-radius: 3px 0 0 3px; }
+.prev-btn { left: 0; border-radius: 0 3px 3px 0; }
+
+.close-btn:hover, .prev-btn:hover, .next-btn:hover {
+    color: var(--primary-color);
 }
 
-.prev-btn:hover, .next-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* --- Diseño Responsivo Adicional --- */
-@media (max-width: 768px) {
-    .hero-header h1 {
-        font-size: 2.2rem;
-    }
-
-    .product-card {
-        flex-direction: column;
-    }
-
-    .product-details {
-        padding: 1.5rem;
-    }
-
-    .product-details h2 {
-        font-size: 1.8rem;
-    }
-
-    .product-details .price {
-        font-size: 1.5rem;
-    }
-
-    .nav-menu {
-        display: none; /* Ocultar menú en móvil para futura implementación de hamburguesa */
-    }
-}
-
-/* --- Estilos del Menú Hamburguesa --- */
+/* --- Hamburger Menu --- */
 .hamburger-icon {
-    display: none; /* Oculto por defecto */
+    display: none;
     cursor: pointer;
 }
 
 .hamburger-icon span {
     display: block;
-    width: 25px;
+    width: 30px;
     height: 3px;
-    margin: 5px 0;
-    background-color: #333;
+    margin: 6px 0;
+    background-color: var(--text-color);
     transition: 0.4s;
 }
 
+/* --- Responsive --- */
 @media (max-width: 768px) {
-    .nav-menu.mobile-hidden {
-        display: none;
-    }
-
-    .hamburger-icon {
-        display: block; /* Visible en móvil */
-    }
+    .nav-menu.mobile-hidden { display: none; }
+    .hamburger-icon { display: block; }
 
     .nav-menu.show {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 70px; /* Altura de la navbar */
+        top: 100%;
         right: 0;
         width: 100%;
-        background-color: #fff;
+        background-color: rgba(26, 26, 26, 0.95);
         box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         padding: 1rem 0;
+        border-top: 1px solid var(--primary-color);
     }
 
     .nav-menu.show li {
         text-align: center;
         margin: 10px 0;
     }
+
+    .main-header h1 { font-size: 2.5rem; }
+    .section-title { font-size: 2.2rem; }
+    .tab-link { font-size: 1rem; padding: 0.8rem 1.2rem; }
+    .product-card { flex-direction: column; }
+    .product-details h2 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+    .welcome-message h2 { font-size: 2.5rem; }
+    .main-header h1 { font-size: 2rem; }
+    .carousel { height: 250px; }
+    .contact { padding: 2rem; }
 }

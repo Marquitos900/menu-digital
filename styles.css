@@ -146,14 +146,25 @@ body {
 
 /* --- Header --- */
 .main-header {
-    height: 100vh;
-    text-align: center;
+    height: 80vh; /* Reduced height */
+    text-align: left; /* Aligned to the left */
     position: relative;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/portada/portada cm.jpg') no-repeat center center/cover;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 5rem;
+    flex-direction: column; /* Changed to column */
+    justify-content: center; /* Center items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 5rem;
+}
+
+.main-header h1 {
+    font-family: var(--header-font);
+    font-size: 3rem; /* Reduced font size */
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    margin-bottom: 2rem; /* Added margin bottom */
 }
 
 .hero-button {
@@ -170,7 +181,7 @@ body {
 }
 
 .hero-button:hover {
-    background-color: #A10720;
+    background-color: transparent; /* Transparent background on hover */
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.7);
 }
